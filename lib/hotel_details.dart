@@ -43,26 +43,32 @@ class HotelDetail_State extends State<HotelDetail> {
               'Enter the information below to find available hotels.',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
-            Text('City'),
-            Card(
-              elevation: 4,
-              shadowColor: Colors.grey,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              margin: EdgeInsets.fromLTRB(15, 10, 15, 1),
-              color: Colors.white,
-              child: Row(
-                children: [
-                  TextButton.icon(
-                    onPressed: null,
-                    icon: Icon(Icons.search),
-                    label: Text(
-                      'Select City',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text('City'),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 10.0),
+              child: Card(
+                elevation: 1,
+                shadowColor: Colors.grey,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                margin: EdgeInsets.fromLTRB(15, 10, 15, 1),
+                color: Colors.white,
+                child: Row(
+                  children: [
+                    TextButton.icon(
+                      onPressed: null,
+                      icon: Icon(Icons.search),
+                      label: Text(
+                        'Select City',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Container(
@@ -71,7 +77,10 @@ class HotelDetail_State extends State<HotelDetail> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Check-in'),
-                  Text('Check-out'),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 120.0),
+                    child: Text('Check-out'),
+                  ),
                 ],
               ),
             ),
@@ -122,7 +131,10 @@ class HotelDetail_State extends State<HotelDetail> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Room'),
-                  Text('Adults'),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 140.0),
+                    child: Text('Adults'),
+                  ),
                 ],
               ),
             ),
@@ -173,7 +185,10 @@ class HotelDetail_State extends State<HotelDetail> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Children'),
-                  Text('Infants'),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 135.0),
+                    child: Text('Infants'),
+                  ),
                 ],
               ),
             ),
@@ -218,10 +233,28 @@ class HotelDetail_State extends State<HotelDetail> {
                 ),
               ],
             ),
-            ElevatedButton.icon(
+            Container(
+              width: 10,
+              decoration: BoxDecoration(
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5.0),
+                  )),
+              margin: EdgeInsetsDirectional.all(30.0),
+              height: 40,
+              padding: EdgeInsets.only(right: 50.0),
+              child: TextButton(
                 onPressed: null,
-                icon: Icon(Icons.search),
-                label: Text('Search'))
+                child: Text(
+                  'Search',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 17,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

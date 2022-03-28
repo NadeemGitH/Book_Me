@@ -19,7 +19,7 @@ class _CricketDetailsState extends State<CricketDetails> {
         body: ListView(
           children: [
             Container(
-              height: 100.h,
+              height: 100,
               color: Colors.blue,
               child: ListView(
                 children: [
@@ -46,13 +46,13 @@ class _CricketDetailsState extends State<CricketDetails> {
                   Row(
                     children: [
                       Container(
-                        width: 300,
+                        width: 250,
                         height: 50,
                         child: Card(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
-                          margin: EdgeInsets.fromLTRB(10, 5, 0, 5),
+                          margin: EdgeInsets.fromLTRB(10, 5, 12, 5),
                           color: Colors.white,
                           child: Row(
                             children: [
@@ -95,30 +95,41 @@ class _CricketDetailsState extends State<CricketDetails> {
                 ],
               ),
             ),
-            Text(
-              'Active Events',
-              style: TextStyle(fontSize: 20),
-            ),
-            Card(
-              elevation: 4,
-              shadowColor: Colors.grey,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Text(
+                'Active Events',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
               ),
-              margin: EdgeInsets.fromLTRB(20, 10, 150, 1),
-              color: Colors.white,
-              child: Row(
-                children: [
-                  TextButton.icon(
-                    onPressed: null,
-                    icon: Icon(Icons.sports_cricket_sharp),
-                    label: Text(
-                      'Australia Tour of Pakistan',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            Row(
+              children: [
+                Container(
+                  width: 340,
+                  height: 50,
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    margin: EdgeInsets.fromLTRB(10, 5, 12, 5),
+                    color: Colors.white,
+                    child: Row(
+                      children: [
+                        TextButton.icon(
+                          onPressed: null,
+                          icon: Icon(Icons.all_out),
+                          label: Text(
+                            'Australia Tour sof Pakistan',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(20),

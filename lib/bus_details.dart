@@ -43,53 +43,58 @@ class BusDetails_State extends State<BusDetails> {
                   ],
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'ONE-WAY',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                  Checkbox(
-                    shape: CircleBorder(),
-                    checkColor: Colors.white,
-                    value: this.valuefirst,
-                    onChanged: (newvalue) {
-                      setState(
-                        () {
-                          this.valuefirst = newvalue!;
-                        },
-                      );
-                    },
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        'Round-Trip',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-                      Checkbox(
-                        checkColor: Colors.white,
-                        shape: CircleBorder(),
-                        value: this.valuesecond,
-                        onChanged: (newvalue) {
-                          setState(
-                            () {
-                              this.valuesecond = newvalue!;
-                            },
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      'ONE-WAY',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    Checkbox(
+                      shape: CircleBorder(),
+                      checkColor: Colors.white,
+                      value: this.valuefirst,
+                      onChanged: (newvalue) {
+                        setState(
+                          () {
+                            this.valuefirst = newvalue!;
+                          },
+                        );
+                      },
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Round-Trip',
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                        Checkbox(
+                          checkColor: Colors.white,
+                          shape: CircleBorder(),
+                          value: this.valuesecond,
+                          onChanged: (newvalue) {
+                            setState(
+                              () {
+                                this.valuesecond = newvalue!;
+                              },
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    width: 200,
+                    width: 160,
                     height: 35,
                     child: Card(
                         shape: RoundedRectangleBorder(
@@ -107,7 +112,7 @@ class BusDetails_State extends State<BusDetails> {
                         )),
                   ),
                   Container(
-                    width: 200,
+                    width: 160,
                     height: 35,
                     child: Card(
                       shape: RoundedRectangleBorder(
@@ -128,9 +133,10 @@ class BusDetails_State extends State<BusDetails> {
                 ],
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    width: 400,
+                    width: 340,
                     height: 45,
                     child: Card(
                         shape: RoundedRectangleBorder(
@@ -150,9 +156,10 @@ class BusDetails_State extends State<BusDetails> {
                 ],
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    width: 300,
+                    width: 250,
                     height: 50,
                     child: Card(
                       shape: RoundedRectangleBorder(
@@ -175,6 +182,7 @@ class BusDetails_State extends State<BusDetails> {
                     ),
                   ),
                   Container(
+                    width: 100,
                     decoration: BoxDecoration(
                         color: Colors.yellow,
                         borderRadius: BorderRadius.all(
