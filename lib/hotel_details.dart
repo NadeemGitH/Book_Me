@@ -50,11 +50,8 @@ class HotelDetail_State extends State<HotelDetail> {
             Padding(
               padding: const EdgeInsets.only(right: 10.0),
               child: Card(
-                elevation: 1,
-                shadowColor: Colors.grey,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
+                shape: StadiumBorder(
+                    side: BorderSide(color: Colors.grey, width: 1.0)),
                 margin: EdgeInsets.fromLTRB(15, 10, 15, 1),
                 color: Colors.white,
                 child: Row(
@@ -78,7 +75,7 @@ class HotelDetail_State extends State<HotelDetail> {
                 children: [
                   Text('Check-in'),
                   Padding(
-                    padding: const EdgeInsets.only(right: 120.0),
+                    padding: const EdgeInsets.only(right: 180.0),
                     child: Text('Check-out'),
                   ),
                 ],
@@ -87,12 +84,11 @@ class HotelDetail_State extends State<HotelDetail> {
             Row(
               children: [
                 Container(
-                  width: 200,
+                  width: 150,
                   height: 35,
                   child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
+                      shape: StadiumBorder(
+                          side: BorderSide(color: Colors.grey, width: 1.0)),
                       margin: EdgeInsets.only(left: 10.0),
                       color: Colors.white,
                       child: Row(
@@ -105,12 +101,11 @@ class HotelDetail_State extends State<HotelDetail> {
                       )),
                 ),
                 Container(
-                  width: 200,
+                  width: 150,
                   height: 35,
                   child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
+                    shape: StadiumBorder(
+                        side: BorderSide(color: Colors.grey, width: 1.0)),
                     margin: EdgeInsets.only(left: 10.0),
                     color: Colors.white,
                     child: Row(
@@ -132,7 +127,7 @@ class HotelDetail_State extends State<HotelDetail> {
                 children: [
                   Text('Room'),
                   Padding(
-                    padding: const EdgeInsets.only(right: 140.0),
+                    padding: const EdgeInsets.only(right: 200.0),
                     child: Text('Adults'),
                   ),
                 ],
@@ -141,12 +136,11 @@ class HotelDetail_State extends State<HotelDetail> {
             Row(
               children: [
                 Container(
-                  width: 200,
+                  width: 150,
                   height: 35,
                   child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
+                      shape: StadiumBorder(
+                          side: BorderSide(color: Colors.grey, width: 1.0)),
                       margin: EdgeInsets.only(left: 10.0),
                       color: Colors.white,
                       child: Row(
@@ -159,12 +153,11 @@ class HotelDetail_State extends State<HotelDetail> {
                       )),
                 ),
                 Container(
-                  width: 200,
+                  width: 150,
                   height: 35,
                   child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
+                    shape: StadiumBorder(
+                        side: BorderSide(color: Colors.grey, width: 1.0)),
                     margin: EdgeInsets.only(left: 10.0),
                     color: Colors.white,
                     child: Row(
@@ -186,7 +179,7 @@ class HotelDetail_State extends State<HotelDetail> {
                 children: [
                   Text('Children'),
                   Padding(
-                    padding: const EdgeInsets.only(right: 135.0),
+                    padding: const EdgeInsets.only(right: 200.0),
                     child: Text('Infants'),
                   ),
                 ],
@@ -195,12 +188,11 @@ class HotelDetail_State extends State<HotelDetail> {
             Row(
               children: [
                 Container(
-                  width: 200,
+                  width: 150,
                   height: 35,
                   child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
+                      shape: StadiumBorder(
+                          side: BorderSide(color: Colors.grey, width: 1.0)),
                       margin: EdgeInsets.only(left: 10.0),
                       color: Colors.white,
                       child: Row(
@@ -213,12 +205,11 @@ class HotelDetail_State extends State<HotelDetail> {
                       )),
                 ),
                 Container(
-                  width: 200,
+                  width: 150,
                   height: 35,
                   child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
+                    shape: StadiumBorder(
+                        side: BorderSide(color: Colors.grey, width: 1.0)),
                     margin: EdgeInsets.only(left: 10.0),
                     color: Colors.white,
                     child: Row(
@@ -233,27 +224,38 @@ class HotelDetail_State extends State<HotelDetail> {
                 ),
               ],
             ),
-            Container(
-              width: 10,
-              decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5.0),
-                  )),
-              margin: EdgeInsetsDirectional.all(30.0),
-              height: 40,
-              padding: EdgeInsets.only(right: 50.0),
-              child: TextButton(
-                onPressed: null,
-                child: Text(
-                  'Search',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 17,
+            Stack(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: 280,
+                    decoration: BoxDecoration(
+                        color: Colors.yellow,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(5.0),
+                        )),
+                    margin: EdgeInsetsDirectional.only(start: 5.0),
+                    height: 40,
+                    alignment: Alignment.bottomRight,
+                    padding: EdgeInsets.only(right: 10.0),
+                    child: TextButton(
+                      onPressed: null,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 100.0),
+                        child: Text(
+                          'Search',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
           ],
         ),

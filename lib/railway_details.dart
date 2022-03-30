@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'categories.dart';
 
-class BusDetails extends StatefulWidget {
+class RailwayDetails extends StatefulWidget {
   @override
-  State<BusDetails> createState() => BusDetails_State();
+  State<RailwayDetails> createState() => RailwayDetails_State();
 }
 
-class BusDetails_State extends State<BusDetails> {
+class RailwayDetails_State extends State<RailwayDetails> {
   bool valuefirst = false;
   bool valuesecond = false;
   @override
@@ -35,7 +35,7 @@ class BusDetails_State extends State<BusDetails> {
                 label: Row(
                   children: [
                     Text(
-                      'Search Bus',
+                      'Search Train',
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ],
@@ -169,9 +169,9 @@ class BusDetails_State extends State<BusDetails> {
                         children: [
                           TextButton.icon(
                             onPressed: null,
-                            icon: Icon(Icons.all_out),
+                            icon: Icon(Icons.train),
                             label: Text(
-                              'All Bus Services',
+                              'Search All Trains',
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),

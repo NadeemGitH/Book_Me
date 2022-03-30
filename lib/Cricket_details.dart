@@ -1,9 +1,7 @@
-import 'package:book_me/appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:book_me/categories.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:sizer/sizer.dart';
 
 class CricketDetails extends StatefulWidget {
   @override

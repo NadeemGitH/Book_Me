@@ -1,12 +1,17 @@
 import 'package:book_me/Cricket_details.dart';
+import 'package:book_me/airline_details.dart';
+import 'package:book_me/bike_details.dart';
+import 'package:book_me/cargo_details.dart';
+import 'package:book_me/events_details.dart';
 import 'package:book_me/hotel_details.dart';
+import 'package:book_me/movies_details.dart';
+import 'package:book_me/railway_details.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:book_me/bus_details.dart';
-import 'package:book_me/appbar.dart';
 import 'package:flutter/widgets.dart';
-import 'package:sizer/sizer.dart';
+
+import 'bus_details.dart';
 
 class Categories extends StatefulWidget {
   @override
@@ -22,7 +27,6 @@ class Categories_State extends State<Categories> {
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
-            mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(
                 height: MediaQuery.of(context).size.height / 600,
@@ -67,9 +71,9 @@ class Categories_State extends State<Categories> {
                 ),
               ),
               Container(
-                color: Colors.blue[900],
+                color: Colors.blue,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
@@ -128,237 +132,371 @@ class Categories_State extends State<Categories> {
                             fontWeight: FontWeight.bold),
                       ),
                     ),
-                    ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.shopping_basket_outlined,
-                        color: Colors.white,
-                      ),
-                      label: Text(
-                        'Shop',
-                        style: TextStyle(
-                            fontSize: 18.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
                   ],
                 ),
               ),
-              Wrap(
-                alignment: WrapAlignment.spaceBetween,
-                direction: Axis.horizontal,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(8),
-                    child: SizedBox(
-                      height: 80,
-                      width: 120,
-                      child: ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                        onPressed: () {
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8),
+                      child: InkWell(
+                        onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => BusDetails()),
                           );
                         },
-                        icon: Icon(
-                          Icons.directions_subway,
-                          color: Colors.amberAccent,
-                        ),
-                        label: Text(
-                          'Bus',
-                          style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.grey[150],
-                              fontWeight: FontWeight.bold),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(10.0)),
+                          height: 70,
+                          width: 90,
+                          child: ListTile(
+                            title: Icon(
+                              Icons.directions_subway,
+                              color: Colors.amberAccent,
+                            ),
+                            subtitle: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 8.0, left: 15.0),
+                                child: Text(
+                                  'Bus',
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8),
-                    child: SizedBox(
-                      height: 80,
-                      width: 120,
-                      child: ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                        onPressed: () {
+                    Padding(
+                      padding: EdgeInsets.all(8),
+                      child: InkWell(
+                        onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => CricketDetails()),
                           );
                         },
-                        icon: Icon(
-                          Icons.sports_cricket,
-                          color: Colors.redAccent,
-                        ),
-                        label: Text(
-                          'Cricket',
-                          style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.grey[150],
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8),
-                    child: Container(
-                      color: Colors.white,
-                      child: SizedBox(
-                        height: 80,
-                        width: 120,
-                        child: ElevatedButton.icon(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.blue,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(10.0)),
+                          height: 70,
+                          width: 90,
+                          child: ListTile(
+                            title: Icon(
+                              Icons.sports_cricket,
+                              color: Colors.amberAccent,
+                            ),
+                            subtitle: Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, left: 15.0),
+                              child: Text(
+                                'Cricket',
+                                style: TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HotelDetail()),
-                            );
-                          },
-                          icon: Icon(
-                            Icons.hotel,
-                            color: Colors.brown,
-                          ),
-                          label: Text(
-                            'Hotel',
-                            style: TextStyle(
-                                fontSize: 18.0,
-                                color: Colors.grey[150],
-                                fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AirlineDetails()),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(10.0)),
+                          height: 70,
+                          width: 90,
+                          child: ListTile(
+                            title: Icon(
+                              Icons.local_airport,
+                              color: Colors.amberAccent,
+                            ),
+                            subtitle: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: Text(
+                                  'Airline',
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8),
-                    child: SizedBox(
-                      height: 80,
-                      width: 120,
-                      child: ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CargoDetails()),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(10.0)),
+                          height: 70,
+                          width: 90,
+                          child: ListTile(
+                            title: Icon(
+                              Icons.car_rental,
+                              color: Colors.amberAccent,
+                            ),
+                            subtitle: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 8.0, left: 10.0),
+                                child: Text(
+                                  'Cargo',
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.event,
-                          color: Colors.brown,
-                        ),
-                        label: Text(
-                          'Events',
-                          style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.grey[150],
-                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8),
-                    child: SizedBox(
-                      height: 80,
-                      width: 120,
-                      child: ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                    Padding(
+                      padding: EdgeInsets.all(8),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HotelDetail()),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(10.0)),
+                          height: 70,
+                          width: 90,
+                          child: ListTile(
+                            title: Icon(
+                              Icons.hotel,
+                              color: Colors.amberAccent,
+                            ),
+                            subtitle: Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, left: 15.0),
+                              child: Text(
+                                'Hotel',
+                                style: TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
                           ),
-                        ),
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.card_giftcard_sharp,
-                          color: Colors.red,
-                        ),
-                        label: Text(
-                          'Cargo',
-                          style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.grey[150],
-                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8),
-                    child: SizedBox(
-                      height: 80,
-                      width: 120,
-                      child: ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                    Padding(
+                      padding: EdgeInsets.all(8),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => EventDetails()),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(10.0)),
+                          height: 70,
+                          width: 90,
+                          child: ListTile(
+                            title: Icon(
+                              Icons.event,
+                              color: Colors.amberAccent,
+                            ),
+                            subtitle: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: Text(
+                                  'Events',
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.movie,
-                          color: Colors.deepPurpleAccent,
-                        ),
-                        label: Text(
-                          'Movies',
-                          style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.grey[150],
-                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8),
-                    child: SizedBox(
-                      height: 80,
-                      width: 120,
-                      child: ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RailwayDetails()),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(10.0)),
+                          height: 70,
+                          width: 90,
+                          child: ListTile(
+                            title: Icon(
+                              Icons.train,
+                              color: Colors.amberAccent,
+                            ),
+                            subtitle: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 8.0, left: 8.0),
+                                child: Text(
+                                  'Railway',
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.car_rental,
-                          color: Colors.deepOrange,
-                        ),
-                        label: Text(
-                          'Taxi',
-                          style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.grey[150],
-                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: EdgeInsets.all(8),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MovieDetails()),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(10.0)),
+                          height: 70,
+                          width: 90,
+                          child: ListTile(
+                            title: Icon(
+                              Icons.movie,
+                              color: Colors.amberAccent,
+                            ),
+                            subtitle: Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 8.0, left: 10.0),
+                              child: Text(
+                                'Movies',
+                                style: TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BikeDetails()),
+                          );
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(10.0)),
+                          height: 70,
+                          width: 90,
+                          child: ListTile(
+                            title: Icon(
+                              Icons.bike_scooter,
+                              color: Colors.amberAccent,
+                            ),
+                            subtitle: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 14.0),
+                                child: Text(
+                                  'Bike',
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

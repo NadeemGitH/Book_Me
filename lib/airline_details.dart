@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'categories.dart';
 
-class BusDetails extends StatefulWidget {
+class AirlineDetails extends StatefulWidget {
   @override
-  State<BusDetails> createState() => BusDetails_State();
+  State<AirlineDetails> createState() => AirlineDetails_State();
 }
 
-class BusDetails_State extends State<BusDetails> {
+class AirlineDetails_State extends State<AirlineDetails> {
   bool valuefirst = false;
   bool valuesecond = false;
   @override
@@ -35,7 +35,7 @@ class BusDetails_State extends State<BusDetails> {
                 label: Row(
                   children: [
                     Text(
-                      'Search Bus',
+                      'Search Flights',
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ],
@@ -104,7 +104,7 @@ class BusDetails_State extends State<BusDetails> {
                           children: [
                             TextButton.icon(
                                 onPressed: null,
-                                icon: Icon(Icons.arrow_circle_up),
+                                icon: Icon(Icons.airplanemode_active),
                                 label: Text('From')),
                           ],
                         )),
@@ -122,7 +122,7 @@ class BusDetails_State extends State<BusDetails> {
                         children: [
                           TextButton.icon(
                               onPressed: null,
-                              icon: Icon(Icons.arrow_circle_down),
+                              icon: Icon(Icons.airplanemode_active_sharp),
                               label: Text('To')),
                         ],
                       ),
@@ -130,28 +130,50 @@ class BusDetails_State extends State<BusDetails> {
                   ),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 340,
-                    height: 45,
-                    child: Card(
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 160,
+                      height: 35,
+                      child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          margin: EdgeInsets.only(left: 10.0),
+                          color: Colors.white,
+                          child: Row(
+                            children: [
+                              TextButton.icon(
+                                  onPressed: null,
+                                  icon: Icon(Icons.date_range),
+                                  label: Text('Departure')),
+                            ],
+                          )),
+                    ),
+                    Container(
+                      width: 160,
+                      height: 35,
+                      child: Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),
-                        margin: EdgeInsets.fromLTRB(10, 5, 0, 5),
+                        margin: EdgeInsets.only(left: 10.0),
                         color: Colors.white,
                         child: Row(
                           children: [
                             TextButton.icon(
                                 onPressed: null,
-                                icon: Icon(Icons.calendar_today),
-                                label: Text('Today')),
+                                icon: Icon(Icons.date_range),
+                                label: Text('Arrival')),
                           ],
-                        )),
-                  ),
-                ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -171,7 +193,7 @@ class BusDetails_State extends State<BusDetails> {
                             onPressed: null,
                             icon: Icon(Icons.all_out),
                             label: Text(
-                              'All Bus Services',
+                              '1 Passenger,Economy',
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
@@ -193,11 +215,11 @@ class BusDetails_State extends State<BusDetails> {
                     child: TextButton(
                       onPressed: null,
                       child: Text(
-                        'Search',
+                        'Bookme',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 17,
+                          fontSize: 15,
                         ),
                       ),
                     ),
