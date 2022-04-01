@@ -1,4 +1,10 @@
+import 'package:book_me/bike_details.dart';
+import 'package:book_me/bookings_details.dart';
 import 'package:book_me/categories.dart';
+import 'package:book_me/events_details.dart';
+import 'package:book_me/movies_details.dart';
+import 'package:book_me/notification.dart';
+import 'package:book_me/profile_details.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +17,13 @@ class BookMe extends StatefulWidget {
 }
 
 class BookMe_State extends State<BookMe> {
+  int _currentIndex = 0;
+  final tabs = [
+    Categories(),
+    BookingDetails(),
+    NotificationDetails(),
+    ProfileDetails(),
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,10 +36,71 @@ class BookMe_State extends State<BookMe> {
             style: TextStyle(height: 1.0),
           ),
           actions: [
-            Icon(Icons.arrow_forward),
+            InkWell(
+              child: Icon(Icons.arrow_forward),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BookMe()),
+                );
+              },
+            ),
           ],
         ),
-        body: Categories(),
+        body: tabs[_currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          type: BottomNavigationBarType.fixed,
+          iconSize: 30,
+          selectedFontSize: 15,
+          items: [
+            BottomNavigationBarItem(
+              backgroundColor: Colors.blue,
+              icon: Icon(
+                Icons.home,
+              ),
+              title: Text(
+                'Home',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: Colors.blue,
+              icon: Icon(
+                Icons.indeterminate_check_box_outlined,
+              ),
+              title: Text(
+                'Bookings',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: Colors.blue,
+              icon: Icon(
+                Icons.notifications,
+              ),
+              title: Text(
+                'Notification',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: Colors.blue,
+              icon: Icon(
+                Icons.more,
+              ),
+              title: Text(
+                'More',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+        ),
       ),
     );
   }

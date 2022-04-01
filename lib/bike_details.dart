@@ -1,3 +1,4 @@
+import 'package:book_me/appbar.dart';
 import 'package:flutter/material.dart';
 
 import 'categories.dart';
@@ -24,7 +25,7 @@ class _BikeDetailsState extends State<BikeDetails> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Categories()),
+                    MaterialPageRoute(builder: (context) => BookMe()),
                   );
                 },
                 icon: Icon(

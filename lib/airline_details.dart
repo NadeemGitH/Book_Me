@@ -1,3 +1,4 @@
+import 'package:book_me/appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'categories.dart';
@@ -25,7 +26,7 @@ class AirlineDetails_State extends State<AirlineDetails> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Categories()),
+                    MaterialPageRoute(builder: (context) => BookMe()),
                   );
                 },
                 icon: Icon(
@@ -215,11 +216,11 @@ class AirlineDetails_State extends State<AirlineDetails> {
                     child: TextButton(
                       onPressed: null,
                       child: Text(
-                        'Bookme',
+                        'BookMe',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 15,
+                          fontSize: 14,
                         ),
                       ),
                     ),

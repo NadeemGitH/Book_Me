@@ -1,3 +1,4 @@
+import 'package:book_me/appbar.dart';
 import 'package:book_me/categories.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class HotelDetail_State extends State<HotelDetail> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Categories()),
+                  MaterialPageRoute(builder: (context) => BookMe()),
                 );
               },
               icon: Icon(

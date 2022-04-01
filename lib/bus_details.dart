@@ -1,3 +1,4 @@
+import 'package:book_me/appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'categories.dart';
@@ -25,7 +26,7 @@ class BusDetails_State extends State<BusDetails> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Categories()),
+                    MaterialPageRoute(builder: (context) => BookMe()),
                   );
                 },
                 icon: Icon(
